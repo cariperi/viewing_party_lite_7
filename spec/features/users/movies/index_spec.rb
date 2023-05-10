@@ -20,11 +20,3 @@ RSpec.describe '/users/:id/movies', type: :feature do
     end
   end
 end
-
-# When I visit the discover movies page,
-# and click on either the Top Movies button or the Search button,
-# I should be taken to the movies results page (users/:user_id/movies) where I see:
-
-#  Title (As a Link to the Movie Details page)
-#  Vote Average of the movie
-# Details: There should only be a maximum of 20 results. The above details should be listed for each movie.
