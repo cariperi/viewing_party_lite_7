@@ -76,4 +76,6 @@ group :test do
   gem "simplecov"
   gem "orderly"
   gem "net-http"
+  gem "webmock"
+  gem "vcr"
 end
