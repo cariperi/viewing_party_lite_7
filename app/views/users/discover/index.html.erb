@@ -1,1 +1,9 @@
 <h1>Discover Movies</h1>
+
+<%= button_to 'Find Top Rated Movies', {controller: 'users/movies', action: 'index', query: 'top_rated'}, method: :get  %>
+
+<%= form_with url: user_movies_path(@user), method: :get, local: true do |form| %>
+  <%= form.label 'Search for Movies by Title:'  %>
+  <%= form.text_field :keyword %>
+  <%= form.submit 'Search' %>
+<% end %>
