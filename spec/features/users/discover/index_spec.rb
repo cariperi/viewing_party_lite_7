@@ -24,7 +24,7 @@ RSpec.describe '/users/:id/discover', type: :feature do
     end
   end
 
-  describe 'When I click on Find Top Rated Movies' do
+  describe 'When I click on Find Top Rated Movies', :vcr do
     it 'I am taken to the Movie Results Page' do
       click_button 'Find Top Rated Movies'
 
@@ -32,7 +32,7 @@ RSpec.describe '/users/:id/discover', type: :feature do
     end
   end
 
-  describe 'When I click on Search' do
+  describe 'When I click on Search', :vcr do
     it 'I am taken to the Movie Results Page' do
       click_button 'Search'
 

@@ -5,7 +5,7 @@ RSpec.describe '/users/:id/movies', type: :feature do
     @user1 = create(:user)
   end
 
-  describe 'When I visit the Movie Results page' do
+  describe 'When I visit the Movie Results page', :vcr do
     it 'I see a button to return to the Discover page' do
       visit user_movies_path(@user1)
 
