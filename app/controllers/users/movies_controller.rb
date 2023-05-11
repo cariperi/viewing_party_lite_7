@@ -1,11 +1,7 @@
 class Users::MoviesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    if keyword_search?
-      @facade = MoviesFacade.new(params[:keyword], nil)
-    else
-      @facade = MoviesFacade.new
-    end
+    @facade = keyword_search? ? MoviesFacade.new(params[:keyword], nil) : MoviesFacade.new
   end
 
   def show
