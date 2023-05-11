@@ -7,6 +7,18 @@ class MovieService
     get_url("3/search/movie?include_adult=false&query=#{keyword}")
   end
 
+  def get_details(id)
+    get_url("/3/movie/#{id}")
+  end
+
+  def get_reviews(id)
+    get_url("/3/movie/#{id}/reviews")
+  end
+
+  def get_cast(id)
+    get_url("/3/movie/#{id}/credits")
+  end
+
   def get_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)
