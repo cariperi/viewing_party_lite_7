@@ -31,7 +31,9 @@ RSpec.describe '/users/:id/movies', type: :feature do
       expect(page).to have_css('.title')
 
       within(first('.movie')) do
+      VCR.use_cassette('test_individual_movie', :allow_playback_repeats => true) do
         click_link(movie.title)
+      end
       end
 
       expect(current_path).to eq(user_movie_path(@user1.id, movie.id))
@@ -51,7 +53,9 @@ RSpec.describe '/users/:id/movies', type: :feature do
       expect(page).to have_css('.title')
 
       within(first('.movie')) do
+      VCR.use_cassette('test_individual_movie', :allow_playback_repeats => true) do
         click_link(movie.title)
+      end
       end
 
       expect(current_path).to eq(user_movie_path(@user1.id, movie.id))
