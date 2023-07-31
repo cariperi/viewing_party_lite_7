@@ -12,7 +12,9 @@
 
   <body>
     <%= link_to 'Home', root_path %>
-
+    <% if current_user %>
+      <%= link_to 'Dashboard', user_path %>
+    <% end %>
     <% flash.each do |type, message| %>
     <p><%= message %></p>
     <% end %>
